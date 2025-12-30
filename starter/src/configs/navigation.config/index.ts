@@ -17,6 +17,26 @@ const navigationConfig: NavigationTree[] = [
         authority: [],
         subMenu: [],
     },
+    {
+        key: 'departments',
+        path: '/departments',
+        title: 'Departments',
+        translateKey: 'nav.departments',
+        icon: 'departments',
+        type: NAV_ITEM_TYPE_ITEM,
+        authority: [],
+        subMenu: [],
+    },
+    {
+        key: 'kraManagement',
+        path: '/kras',
+        title: 'KRA Management',
+        translateKey: 'nav.kraManagement',
+        icon: 'kras',
+        type: NAV_ITEM_TYPE_ITEM,
+        authority: [],
+        subMenu: [],
+    },
     /** Example purpose only, please remove */
     {
         key: 'singleMenuItem',
