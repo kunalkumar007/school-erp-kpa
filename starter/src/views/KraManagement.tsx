@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Card from '@/components/ui/Card'
 import Button from '@/components/ui/Button'
 import Select from '@/components/ui/Select'
@@ -270,6 +271,7 @@ const KraManagement = () => {
         open: false,
         mode: 'create',
     })
+    const navigate = useNavigate()
 
     const selectedDepartment = departments.find(
         (dept) => dept.value === selectedDepartmentId,
@@ -306,6 +308,19 @@ const KraManagement = () => {
         () => kras.find((kra) => kra.id === selectedKraId),
         [kras, selectedKraId],
     )
+
+    const goToTaskCreator = (type: 'task' | 'question') => {
+        if (!selectedDepartment || !selectedKra) return
+        navigate('/tasks/create', {
+            state: {
+                departmentId: selectedDepartment.value,
+                departmentName: selectedDepartment.label,
+                kraId: selectedKra.id,
+                kraTitle: selectedKra.title,
+                taskType: type,
+            },
+        })
+    }
 
     const handleToggleActive = (kraId: string) => {
         setKras((prev) =>
@@ -588,12 +603,14 @@ const KraManagement = () => {
                                 <Button
                                     variant="solid"
                                     icon={<PiClipboardTextDuotone />}
+                                    onClick={() => goToTaskCreator('task')}
                                 >
                                     Create Task
                                 </Button>
                                 <Button
                                     variant="default"
                                     icon={<PiChatsDuotone />}
+                                    onClick={() => goToTaskCreator('question')}
                                 >
                                     Ask Question
                                 </Button>

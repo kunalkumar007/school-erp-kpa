@@ -25,6 +25,21 @@ export const protectedRoutes: Routes = [
         authority: [],
     },
     {
+        key: 'tasks.create',
+        path: '/tasks/create',
+        component: lazy(() => import('@/views/tasks/TaskCreate')),
+        authority: [],
+    },
+    {
+        key: 'tasks.detail',
+        path: '/tasks/:taskId',
+        component: lazy(() => import('@/views/tasks/TaskDetailOwner')),
+        authority: [],
+        meta: {
+            pageContainerType: 'contained',
+        },
+    },
+    {
         key: 'notifications',
         path: '/notifications',
         component: lazy(() => import('@/views/Notifications')),
