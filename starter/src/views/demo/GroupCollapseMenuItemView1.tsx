@@ -1,4 +1,3 @@
-/** Example purpose only */
 const GroupCollapseMenuItemView1 = () => {
     return <div>GroupCollapseMenuItemView1</div>
 }

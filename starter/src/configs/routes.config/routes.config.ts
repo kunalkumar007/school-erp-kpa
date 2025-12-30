@@ -40,50 +40,42 @@ export const protectedRoutes: Routes = [
         },
     },
     {
+        key: 'tasks.self',
+        path: '/tasks/self',
+        component: lazy(() => import('@/views/tasks/OwnerSelfTasks')),
+        authority: [],
+        meta: {
+            pageContainerType: 'contained',
+        },
+    },
+    {
+        key: 'hod.dashboard',
+        path: '/hod/dashboard',
+        component: lazy(() => import('@/views/tasks/HodDashboard')),
+        authority: [],
+    },
+    {
+        key: 'hod.taskDetail',
+        path: '/hod/tasks/:taskId',
+        component: lazy(() => import('@/views/tasks/HodTaskDetail')),
+        authority: [],
+        meta: {
+            pageContainerType: 'contained',
+        },
+    },
+    {
+        key: 'purchases.board',
+        path: '/purchases',
+        component: lazy(() => import('@/views/tasks/PurchasesBoard')),
+        authority: [],
+        meta: {
+            pageContainerType: 'contained',
+        },
+    },
+    {
         key: 'notifications',
         path: '/notifications',
         component: lazy(() => import('@/views/Notifications')),
-        authority: [],
-    },
-    /** Example purpose only, please remove */
-    {
-        key: 'singleMenuItem',
-        path: '/single-menu-view',
-        component: lazy(() => import('@/views/demo/SingleMenuView')),
-        authority: [],
-    },
-    {
-        key: 'collapseMenu.item1',
-        path: '/collapse-menu-item-view-1',
-        component: lazy(() => import('@/views/demo/CollapseMenuItemView1')),
-        authority: [],
-    },
-    {
-        key: 'collapseMenu.item2',
-        path: '/collapse-menu-item-view-2',
-        component: lazy(() => import('@/views/demo/CollapseMenuItemView2')),
-        authority: [],
-    },
-    {
-        key: 'groupMenu.single',
-        path: '/group-single-menu-item-view',
-        component: lazy(() => import('@/views/demo/GroupSingleMenuItemView')),
-        authority: [],
-    },
-    {
-        key: 'groupMenu.collapse.item1',
-        path: '/group-collapse-menu-item-view-1',
-        component: lazy(
-            () => import('@/views/demo/GroupCollapseMenuItemView1'),
-        ),
-        authority: [],
-    },
-    {
-        key: 'groupMenu.collapse.item2',
-        path: '/group-collapse-menu-item-view-2',
-        component: lazy(
-            () => import('@/views/demo/GroupCollapseMenuItemView2'),
-        ),
         authority: [],
     },
     ...othersRoute,
