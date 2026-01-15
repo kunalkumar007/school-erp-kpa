@@ -10,16 +10,10 @@ interface LogoProps extends CommonProps {
 }
 
 const LOGO_SRC_PATH = '/img/logo/'
+const LOGO_FILE_NAME = 'LOGO.png'
 
 const Logo = (props: LogoProps) => {
-    const {
-        type = 'full',
-        mode = 'light',
-        className,
-        imgClass,
-        style,
-        logoWidth = 'auto',
-    } = props
+    const { className, imgClass, style, logoWidth = 'auto' } = props
 
     return (
         <div
@@ -31,7 +25,7 @@ const Logo = (props: LogoProps) => {
         >
             <img
                 className={imgClass}
-                src={`${LOGO_SRC_PATH}logo-${mode}-${type}.png`}
+                src={`${LOGO_SRC_PATH}${LOGO_FILE_NAME}`}
                 alt={`${APP_NAME} logo`}
             />
         </div>
