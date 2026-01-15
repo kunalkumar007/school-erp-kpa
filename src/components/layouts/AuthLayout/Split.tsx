@@ -20,9 +20,10 @@ const Split = ({ children, content, ...rest }: SplitProps) => {
                             The easiest way to build your admin app
                         </h1>
                         <p className="text-neutral opacity-80 mx-auto mt-8 font-semibold">
-                            Experience seamless project management with Ecme.
-                            Simplify your workflow, and achieve your goals
-                            efficiently with our powerful and intuitive tools.
+                            Experience seamless project management with
+                            taksh-shila. Simplify your workflow, and achieve
+                            your goals efficiently with our powerful and
+                            intuitive tools.
                         </p>
                     </div>
                 </div>
